@@ -16,7 +16,7 @@ public class GuessNumber {
 			System.out.println("Zgadnij liczbę od " + min + " do " + max + ".");
 			int guess = userGuess(min, max);
 
-			while (guess != computersNum && wantToPlay.equals("tak")) {
+			while (guess != computersNum) {
 				if (guess < computersNum) {
 					System.out.println("Za mało! Spróbuj ponownie: ");
 					guess = userGuess(min, max);

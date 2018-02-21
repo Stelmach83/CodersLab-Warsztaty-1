@@ -59,14 +59,15 @@ public class LottoGame {
 		int min = 1;
 		int max = 49;
 		
-		// tablica unikalnych wylosowań
+		// nowa tablica, która będzie przechowywała unikalne wylosowania
 		int[] wylosowaneLiczby = new int[wprowadzoneLiczby.length];
 		wylosowaneLiczby[0] = r.nextInt((max - min) + 1) + min;
 
-		// po wylosowaniu tworzona jest lista wykluczeń celem uniknięcia powtórzeń
+		// po wylosowaniu tworzona jest lista wykluczeń celem porówniania i uniknięcia powtórzeń
 		ArrayList<Integer> czyZawiera = new ArrayList<>();
 		czyZawiera.add(wylosowaneLiczby[0]);
 		
+		// losowanie i porównanie z wykluczeniami (powtórzeniami)
 		for (int i = 1; i < wylosowaneLiczby.length; i++) {
 			wylosowaneLiczby[i] = r.nextInt((max - min) + 1) + min;
 			while (czyZawiera.contains(wylosowaneLiczby[i])) {
