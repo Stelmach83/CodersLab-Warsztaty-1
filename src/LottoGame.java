@@ -44,8 +44,8 @@ public class LottoGame {
 		System.out.println("Wprowadź szóstą liczbę: ");
 		int liczbaSzesc = getLottoNumber();
 
-		while (liczbaSzesc == liczbaPiec || liczbaSzesc == liczbaPiec || liczbaSzesc == liczbaCztery
-				|| liczbaSzesc == liczbaTrzy || liczbaSzesc == liczbaDwa || liczbaSzesc == liczbaJeden) {
+		while (liczbaSzesc == liczbaPiec || liczbaSzesc == liczbaCztery || liczbaSzesc == liczbaTrzy
+				|| liczbaSzesc == liczbaDwa || liczbaSzesc == liczbaJeden) {
 			System.out.println("Wprowadź liczbę 6 różną od pozostałych: ");
 			liczbaSzesc = getLottoNumber();
 		}
@@ -58,15 +58,16 @@ public class LottoGame {
 		Random r = new Random();
 		int min = 1;
 		int max = 49;
-		
+
 		// nowa tablica, która będzie przechowywała unikalne wylosowania
 		int[] wylosowaneLiczby = new int[wprowadzoneLiczby.length];
 		wylosowaneLiczby[0] = r.nextInt((max - min) + 1) + min;
 
-		// po wylosowaniu tworzona jest lista wykluczeń celem porówniania i uniknięcia powtórzeń
+		// po wylosowaniu tworzona jest lista wykluczeń celem porówniania i uniknięcia
+		// powtórzeń
 		ArrayList<Integer> czyZawiera = new ArrayList<>();
 		czyZawiera.add(wylosowaneLiczby[0]);
-		
+
 		// losowanie i porównanie z wykluczeniami (powtórzeniami)
 		for (int i = 1; i < wylosowaneLiczby.length; i++) {
 			wylosowaneLiczby[i] = r.nextInt((max - min) + 1) + min;
