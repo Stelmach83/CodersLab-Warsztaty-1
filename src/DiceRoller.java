@@ -16,14 +16,11 @@ public class DiceRoller {
 
 	public static String rollFormulaBuilder() {
 		System.out.println("Wprowadź rzut kością w formacie xDy+z, gdzie: ");
-		String formula = "";
 		StringBuilder sb = new StringBuilder();
 		sb.append(howManyRolls());
 		sb.append("D" + diceType());
 		sb.append(resultModifier());
-
-		formula = sb.toString();
-		return formula;
+		return sb.toString();
 	}
 
 	public static int diceRollResult(String formula) {
@@ -93,7 +90,7 @@ public class DiceRoller {
 	}
 
 	public static String resultModifier() {
-		System.out.println("z - to jest modyfikator wyniku, np. -12, +8, itp.");
+		System.out.println("z - to jest modyfikator wyniku, np. -12, +8, 0, itp.");
 		Scanner sc = new Scanner(System.in);
 		while (!sc.hasNextInt()) {
 			sc.next();
