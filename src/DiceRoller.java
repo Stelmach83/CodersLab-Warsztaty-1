@@ -101,8 +101,8 @@ public class DiceRoller {
 		System.out.println("z - to jest modyfikator wyniku, np. -12, 8, 0, itp.");
 		Scanner sc = new Scanner(System.in);
 		while (!sc.hasNextInt()) {
-			sc.next();
 			System.out.println("Podaj modyfikator wyniku: ");
+			sc.nextLine();
 		}
 		int modifier = sc.nextInt();
 		String stringMod = "";
