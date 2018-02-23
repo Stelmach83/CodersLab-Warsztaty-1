@@ -79,18 +79,18 @@ public class DiceRoller {
 					String dice = String.valueOf(d);
 					return dice;
 				} else {
-					System.out.println("Wprowadź poprawny wynik:");
+					System.out.println("Wprowadź poprawną ilość boków kości:");
 					sc.nextLine();
 				}
 			} else {
-				System.out.println("Wprowadź poprawny wynik:");
+				System.out.println("Wprowadź poprawną ilość boków kości:");
 				sc.nextLine();
 			}
 		}
 	}
 
 	public static String resultModifier() {
-		System.out.println("z - to jest modyfikator wyniku, np. -12, +8, 0, itp.");
+		System.out.println("z - to jest modyfikator wyniku, np. -12, 8, 0, itp.");
 		Scanner sc = new Scanner(System.in);
 		while (!sc.hasNextInt()) {
 			sc.next();
