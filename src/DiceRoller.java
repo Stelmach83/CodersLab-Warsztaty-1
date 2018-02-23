@@ -6,7 +6,7 @@ public class DiceRoller {
 	public static void main(String[] args) {
 
 		String formula = rollFormulaBuilder();
-		if (formula.charAt(formula.length()-1) == '0') {
+		if (formula.charAt(formula.length()-1) == '0' && formula.charAt(formula.length()-2) == '+') {
 			System.out.println("Wykonujesz rzut: " + formula.substring(0, formula.length()-2));
 		} else {			
 			System.out.println("Wykonujesz rzut: " + formula);
