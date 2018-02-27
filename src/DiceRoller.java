@@ -6,20 +6,211 @@ public class DiceRoller {
 	public static void main(String[] args) {
 
 		String formula = rollFormulaBuilder();
+		String outp = "";
+		int formatowanie = 0;
+
 		if (formula.charAt(formula.length() - 1) == '0' && formula.charAt(formula.length() - 2) == '+') {
 			if (formula.charAt(0) == '1' && formula.charAt(1) == 'D') {
-				System.out.println("Wykonujesz rzut: " + formula.substring(1, formula.length() - 2));
+				outp = "Wykonujesz rzut: " + formula.substring(1, formula.length() - 2);
+				int outpL = outp.length() + 6;
+				if (outpL % 2 == 0) {
+					outpL = outp.length() + 6 + 1;
+				}
+				System.out.print("\t");
+				for (int i = 0; i < outpL + 2; i++) {
+					if (i % 2 != 0) {
+						System.out.print(" ");
+					} else {
+						System.out.print("*");
+					}
+				}
+				System.out.println();
+				System.out.print("\t");
+				System.out.print("*");
+				for (int i = 0; i < (outpL - outp.length()) / 2; i++) {
+					System.out.print(" ");
+				}
+				System.out.print(outp);
+				for (int i = ((outpL - outp.length()) / 2) + outp.length(); i < outpL; i++) {
+					System.out.print(" ");
+				}
+				System.out.println("*");
+				System.out.print("\t");
+				for (int i = 0; i < outpL + 2; i++) {
+					if (i == 0 || i == outpL + 2 - 1) {
+						System.out.print("*");
+					} else {
+						if (i % 2 != 0) {
+							System.out.print(" ");
+						} else {
+							System.out.print("-");
+						}
+					}
+				}
+				System.out.println();
+				formatowanie = outpL;
+
 			} else {
-				System.out.println("Wykonujesz rzut: " + formula.substring(0, formula.length() - 2));
+				outp = "Wykonujesz rzut: " + formula.substring(0, formula.length() - 2);
+				int outpL = outp.length() + 6;
+				if (outpL % 2 == 0) {
+					outpL = outp.length() + 6 + 1;
+				}
+				System.out.print("\t");
+				for (int i = 0; i < outpL + 2; i++) {
+					if (i % 2 != 0) {
+						System.out.print(" ");
+					} else {
+						System.out.print("*");
+					}
+				}
+				System.out.println();
+				System.out.print("\t");
+				System.out.print("*");
+				for (int i = 0; i < (outpL - outp.length()) / 2; i++) {
+					System.out.print(" ");
+				}
+				System.out.print(outp);
+				for (int i = ((outpL - outp.length()) / 2) + outp.length(); i < outpL; i++) {
+					System.out.print(" ");
+				}
+				System.out.println("*");
+				System.out.print("\t");
+				for (int i = 0; i < outpL + 2; i++) {
+					if (i == 0 || i == outpL + 2 - 1) {
+						System.out.print("*");
+					} else {
+						if (i % 2 != 0) {
+							System.out.print(" ");
+						} else {
+							System.out.print("-");
+						}
+					}
+				}
+				System.out.println();
+				formatowanie = outpL;
 			}
 		} else {
 			if (formula.charAt(0) == '1' && formula.charAt(1) == 'D') {
-				System.out.println("Wykonujesz rzut: " + formula.substring(1, formula.length()));
+				outp = "Wykonujesz rzut: " + formula.substring(1, formula.length());
+				int outpL = outp.length() + 6;
+				if (outpL % 2 == 0) {
+					outpL = outp.length() + 6 + 1;
+				}
+				System.out.print("\t");
+				for (int i = 0; i < outpL + 2; i++) {
+					if (i % 2 != 0) {
+						System.out.print(" ");
+					} else {
+						System.out.print("*");
+					}
+				}
+				System.out.println();
+				System.out.print("\t");
+				System.out.print("*");
+				for (int i = 0; i < (outpL - outp.length()) / 2; i++) {
+					System.out.print(" ");
+				}
+				System.out.print(outp);
+				for (int i = ((outpL - outp.length()) / 2) + outp.length(); i < outpL; i++) {
+					System.out.print(" ");
+				}
+				System.out.println("*");
+				System.out.print("\t");
+				for (int i = 0; i < outpL + 2; i++) {
+					if (i == 0 || i == outpL + 2 - 1) {
+						System.out.print("*");
+					} else {
+						if (i % 2 != 0) {
+							System.out.print(" ");
+						} else {
+							System.out.print("-");
+						}
+					}
+				}
+				System.out.println();
+				formatowanie = outpL;
 			} else {
-				System.out.println("Wykonujesz rzut: " + formula);
+				outp = "Wykonujesz rzut: " + formula;
+				int outpL = outp.length() + 6;
+				if (outpL % 2 == 0) {
+					outpL = outp.length() + 6 + 1;
+				}
+				System.out.print("\t");
+				for (int i = 0; i < outpL + 2; i++) {
+					if (i % 2 != 0) {
+						System.out.print(" ");
+					} else {
+						System.out.print("*");
+					}
+				}
+				System.out.println();
+				System.out.print("\t");
+				System.out.print("*");
+				for (int i = 0; i < (outpL - outp.length()) / 2; i++) {
+					System.out.print(" ");
+				}
+				System.out.print(outp);
+				for (int i = ((outpL - outp.length()) / 2) + outp.length(); i < outpL; i++) {
+					System.out.print(" ");
+				}
+				System.out.println("*");
+				System.out.print("\t");
+				for (int i = 0; i < outpL + 2; i++) {
+					if (i == 0 || i == outpL + 2 - 1) {
+						System.out.print("*");
+					} else {
+						if (i % 2 != 0) {
+							System.out.print(" ");
+						} else {
+							System.out.print("-");
+						}
+					}
+				}
+				System.out.println();
+				formatowanie = outpL;
 			}
 		}
-		System.out.println("Twój wynik to: " + diceRollResult(formula));
+
+		String wynik = "Twój wynik to: " + diceRollResult(formula, formatowanie);
+		formatowanie = formatowanie + 2;
+		int spacer = (formatowanie - wynik.length() - 2) / 2;
+		System.out.print("\t");
+		for (int i = 0; i < formatowanie; i++) {
+			if (i == 0 || i == formatowanie - 1) {
+				System.out.print("*");
+			} else {
+				if (i % 2 != 0) {
+					System.out.print(" ");
+				} else {
+					System.out.print("-");
+				}
+			}
+		}
+		System.out.println();
+		System.out.print("\t");
+		System.out.print("*");
+		int counter = 0;
+		for (int i = 0; i < spacer; i++) {
+			System.out.print(" ");
+			counter++;
+		}
+		System.out.print(wynik);
+
+		for (int i = wynik.length() + counter + 2; i < formatowanie; i++) {
+			System.out.print(" ");
+		}
+		System.out.print("*");
+		System.out.println();
+		System.out.print("\t");
+		for (int i = 0; i < formatowanie; i++) {
+			if (i % 2 != 0) {
+				System.out.print(" ");
+			} else {
+				System.out.print("*");
+			}
+		}
+		System.out.println();
 	}
 
 	public static String rollFormulaBuilder() {
@@ -31,7 +222,7 @@ public class DiceRoller {
 		return sb.toString();
 	}
 
-	public static int diceRollResult(String formula) {
+	public static int diceRollResult(String formula, int formatowanie) {
 		Random r = new Random();
 
 		int howManyRolls = Integer.parseInt(formula.substring(0, formula.indexOf('D')));
@@ -43,14 +234,77 @@ public class DiceRoller {
 		int sum = 0;
 		int rzut = 0;
 		int result = 0;
+		formatowanie = formatowanie + 2;
 
 		for (int i = 0; i < howManyRolls; i++) {
 			rzut = r.nextInt((max - min) + 1) + min;
 			sum += rzut;
-			System.out.println("Rzut nr " + (i + 1) + " to: " + rzut);
+			String rzutNapis = "Rzut nr " + (i + 1) + " to: " + rzut;
+			int spacerNapis = (formatowanie - (rzutNapis.length() + 2)) / 2;
+			System.out.print("\t");
+			System.out.print("*");
+			int counter = 0;
+			if (rzut < 10 && i < 9) {
+				spacerNapis = spacerNapis - 1;
+			}
+			for (int j = 0; j < spacerNapis; j++) {
+				System.out.print(" ");
+				counter++;
+			}
+			System.out.print(rzutNapis);
+			for (int j = rzutNapis.length() + counter + 2; j < formatowanie; j++) {
+				System.out.print(" ");
+			}
+			System.out.println("*");
+
 		}
-		System.out.println("Suma rzutów: " + sum);
-		System.out.println("Modifier to: " + modifier);
+
+		String sumaRzut = "Suma rzutów: " + sum;
+		int spacerRzut = (formatowanie - (sumaRzut.length() + 2)) / 2;
+		System.out.print("\t");
+		System.out.print("*");
+		int counter1 = 0;
+		for (int i = 0; i < spacerRzut; i++) {
+			System.out.print(" ");
+			counter1++;
+		}
+		System.out.print(sumaRzut);
+		for (int i = sumaRzut.length() + counter1 + 2; i < formatowanie; i++) {
+			System.out.print(" ");
+		}
+		System.out.println("*");
+
+		if (modifier > 0) {
+			String modi = "Modifier to: +" + modifier;
+			int spacerModi = (formatowanie - (modi.length() + 2)) / 2;
+			System.out.print("\t");
+			System.out.print("*");
+			int counter2 = 0;
+			for (int i = 0; i < spacerModi; i++) {
+				System.out.print(" ");
+				counter2++;
+			}
+			System.out.print(modi);
+			for (int i = modi.length() + counter2 + 3; i < formatowanie; i++) {
+				System.out.print(" ");
+			}
+			System.out.println(" *");
+		} else {
+			String modi = "Modifier to: " + modifier;
+			int spacerModi = (formatowanie - (modi.length() + 2)) / 2;
+			System.out.print("\t");
+			System.out.print("*");
+			int counter2 = 0;
+			for (int i = 0; i < spacerModi; i++) {
+				System.out.print(" ");
+				counter2++;
+			}
+			System.out.print(modi);
+			for (int i = modi.length() + counter2 + 3; i < formatowanie; i++) {
+				System.out.print(" ");
+			}
+			System.out.println(" *");
+		}
 		result = sum + modifier;
 		return result;
 	}
