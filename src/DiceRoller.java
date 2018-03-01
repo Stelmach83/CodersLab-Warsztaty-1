@@ -244,7 +244,17 @@ public class DiceRoller {
 			System.out.print("\t");
 			System.out.print("*");
 			int counter = 0;
+
 			if (rzut < 10 && i < 9) {
+				spacerNapis = spacerNapis - 1;
+			}
+			if (rzut == 100 || i == 99) {
+				spacerNapis = spacerNapis + 1;
+			}
+			if (i == 99 && rzut < 10) {
+				spacerNapis = spacerNapis - 1;
+			}
+			if (rzut == 100 && i < 9) {
 				spacerNapis = spacerNapis - 1;
 			}
 			for (int j = 0; j < spacerNapis; j++) {
@@ -256,15 +266,17 @@ public class DiceRoller {
 				System.out.print(" ");
 			}
 			System.out.println("*");
-
 		}
 
 		String sumaRzut = "Suma rzutów: " + sum;
-		int spacerRzut = (formatowanie - (sumaRzut.length() + 2)) / 2;
+		int spacerRzut = (formatowanie - (sumaRzut.length())) / 2;
 		System.out.print("\t");
 		System.out.print("*");
 		int counter1 = 0;
-		for (int i = 0; i < spacerRzut; i++) {
+		if (sum > 99) {
+			spacerRzut = spacerRzut + 1;
+		}
+		for (int i = 0; i < spacerRzut - 2; i++) {
 			System.out.print(" ");
 			counter1++;
 		}
@@ -276,34 +288,40 @@ public class DiceRoller {
 
 		if (modifier > 0) {
 			String modi = "Modifier to: +" + modifier;
-			int spacerModi = (formatowanie - (modi.length() + 2)) / 2;
+			int spacerModi = (formatowanie - (modi.length())) / 2;
+			if (modi.length() > 14 && modifier > 9) {
+				spacerModi = spacerModi + 1;
+			}
 			System.out.print("\t");
 			System.out.print("*");
 			int counter2 = 0;
-			for (int i = 0; i < spacerModi; i++) {
+			for (int i = 0; i < spacerModi - 2; i++) {
 				System.out.print(" ");
 				counter2++;
 			}
 			System.out.print(modi);
-			for (int i = modi.length() + counter2 + 3; i < formatowanie; i++) {
+			for (int i = modi.length() + counter2 + 2; i < formatowanie; i++) {
 				System.out.print(" ");
 			}
-			System.out.println(" *");
+			System.out.println("*");
 		} else {
 			String modi = "Modifier to: " + modifier;
-			int spacerModi = (formatowanie - (modi.length() + 2)) / 2;
+			int spacerModi = (formatowanie - (modi.length())) / 2;
+			if (modi.length() > 14 && modifier < -9) {
+				spacerModi = spacerModi + 1;
+			}
 			System.out.print("\t");
 			System.out.print("*");
 			int counter2 = 0;
-			for (int i = 0; i < spacerModi; i++) {
+			for (int i = 0; i < spacerModi - 2; i++) {
 				System.out.print(" ");
 				counter2++;
 			}
 			System.out.print(modi);
-			for (int i = modi.length() + counter2 + 3; i < formatowanie; i++) {
+			for (int i = modi.length() + counter2 + 2; i < formatowanie; i++) {
 				System.out.print(" ");
 			}
-			System.out.println(" *");
+			System.out.println("*");
 		}
 		result = sum + modifier;
 		return result;
